@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora Actual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10%;
+            background-color: #C3B1E1;
+        }
+        .time {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .location {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <titulo>
+    <br>
+    <h2>Servicio de hora actual</h2>
+    <div>
+        <div class="location">Argentina</div>
+        <div class="time" id="argentina-time">Cargando...</div>
+    </div>
+    <div>
+        <div class="location">Brasil</div>
+        <div class="time" id="brazil-time">Cargando...</div>
+    </div>
+    <div>
+        <div class="location">México</div>
+        <div class="time" id="mexico-time">Cargando...</div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const argentinaTime = new Date().toLocaleTimeString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" });
+            const brazilTime = new Date().toLocaleTimeString("pt-BR", { timeZone: "America/Sao_Paulo" });
+            const mexicoTime = new Date().toLocaleTimeString("es-MX", { timeZone: "America/Mexico_City" });
+
+            document.getElementById('argentina-time').textContent = argentinaTime;
+            document.getElementById('brazil-time').textContent = brazilTime;
+            document.getElementById('mexico-time').textContent = mexicoTime;
+        }
+
+        setInterval(updateTime, 1000); // Actualiza cada segundo
+        updateTime(); // Inicializa con la hora actual
+    </script>
+</body>
+</html>
