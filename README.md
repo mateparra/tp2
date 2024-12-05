@@ -4,6 +4,7 @@ Instrucciones
 Clonar repo
 
 $ git clone https://gitlab.com/sergio.pernas1/hora-actual-dockerfile.git
+
 $ cd hora-actual-dockerfile
 
 
